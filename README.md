@@ -15,3 +15,9 @@
 |Arduino UNO R4 WiFi|1|マイコン||
 |タッチセンサ（TTP223B）|1|手動給餌トリガー||
 |サーボモータ(9G Servo)|1|- フラップゲートの開閉制御||
+
+# 使用ライブラリ（ソフトウェア）
+・WiFiS3.h：Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ
+
+ ・ArduinoHttpClient.h：HTTP/HTTPSリクエストを簡単に送るためのライブラリ
+
