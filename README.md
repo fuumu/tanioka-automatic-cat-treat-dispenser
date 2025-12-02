@@ -25,8 +25,6 @@
 　→Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ
 
 ・ArduinoHttpClient.h
-
- →-Arduinoから HTTPリクエスト（GET, POST, PUT, DELETE） を送信したり、WebSocket通信を行う
  
 ・Servo.h
 
