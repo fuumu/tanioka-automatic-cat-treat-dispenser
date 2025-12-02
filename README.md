@@ -22,9 +22,14 @@
 # 使用ライブラリ（ソフトウェア）
 ・WiFiS3.h
 
-　‣Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ
+　→Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ
 
- ・ArduinoHttpClient.h
+・ArduinoHttpClient.h
+
+ →-Arduinoから HTTPリクエスト（GET, POST, PUT, DELETE） を送信したり、WebSocket通信を行う
  
+・Servo.h
+
+ 　→Arduino標準ライブラリのひとつで、サーボモータを簡単に制御するためのヘッダファイル
  　‣HTTP/HTTPSリクエストを簡単に送るためのライブラリ
 
