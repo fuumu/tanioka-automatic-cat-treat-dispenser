@@ -33,7 +33,8 @@
  　→Arduino標準ライブラリのひとつで、サーボモータを簡単に制御するためのヘッダファイル
 
 # 配線図
-  <img width="476" height="759" alt="image" src="https://github.com/user-attachments/assets/21784c3d-0bdd-4077-a33a-aa6c6eb41180" />
+  <img width="463" height="730" alt="image" src="https://github.com/user-attachments/assets/51c0345f-d02d-4cca-8499-4d4f401e82a4" />
+
 
 
 
