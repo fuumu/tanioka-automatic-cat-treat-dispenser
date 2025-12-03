@@ -35,6 +35,8 @@
 # 配線図
   <img width="463" height="730" alt="image" src="https://github.com/user-attachments/assets/51c0345f-d02d-4cca-8499-4d4f401e82a4" />
 
+# 回路図
+<img width="817" height="573" alt="image" src="https://github.com/user-attachments/assets/2ce914e1-487e-42d6-9dd5-871a02f01f54" />
 
 
 
