@@ -31,6 +31,10 @@
 ・Servo.h
 
  　→Arduino標準ライブラリのひとつで、サーボモータを簡単に制御するためのヘッダファイル
+  
+・arduino_secrets.h
+
+　→WiFi接続
 
 # 配線図
   <img width="463" height="730" alt="image" src="https://github.com/user-attachments/assets/51c0345f-d02d-4cca-8499-4d4f401e82a4" />
