@@ -13,7 +13,7 @@ int status = WL_IDLE_STATUS;  // WiFi接続状態の初期値
 const char serverAddress[] = "api.line.me";///LINEのMessaging APIサーバのホスト名
 
 const int port = 443; ////HTTPS用のポート番号
-const String channelToken = "o72tG0EFTF/ZdGxDrkwuzDmbdW14r4hq/V/XSOYOJiTEusf3nA3cm/mwrniJUIfAZcp16wJeIEP2l1AuIDEiOchyGiwdGp47NeJxbqdQdaUo8Cwl4k/I68V96+JMo4CZKK//n0L4bvVjh7AnC1koYQdB04t89/1O/w1cDnyilFU="; // Messaging APIのチャネルアクセストークン
+const String channelToken = ""; // Messaging APIのチャネルアクセストークン
                                                          //認証に使うチャネルアクセストークン
 
 // ピン設定
@@ -134,7 +134,7 @@ void sendLineMessage(const char* message){///与えられた文字列messageをL
   // バッファサイズは十分に大きく確保（例: 512）
   char body[512];
   snprintf(body, sizeof(body),
-           "{\"to\":\"U76585dd698c2e9b1f679a9daa6c849c5\",\"messages\":[{\"type\":\"text\",\"text\":\"%s\"}]}",message);////snprintf:書式付き文字列を安全にバッファへ書き込む関数
+           "{\"to\":\"your userID\",\"messages\":[{\"type\":\"text\",\"text\":\"%s\"}]}",message);////snprintf:書式付き文字列を安全にバッファへ書き込む関数
   ///sizeof(body) を指定しているので、最大 512 バイトまでしか書き込まれず、バッファオーバーフローを防げます
   ///LINE Messaging API が要求する JSON 形式
  ///"to" に送信先ユーザーIDを指定
