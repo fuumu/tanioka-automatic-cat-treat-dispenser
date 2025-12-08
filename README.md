@@ -1,16 +1,16 @@
 # automatic-cat-treat-dispenser
 
 # 概要
-タッチセンサに触れたら、サーボモーターでゲートを開閉し、自動でおやつを排出してLINEで排出したことを通知する
+卒業制作
 
 # 機能
 ・タッチセンサで触れたらおやつを排出する
 
 ・タッチセンサの出力がHIGHになればサーボモーターでゲートを開閉する
 
-・おやつが排出されたら、LINEで時刻とメッセージを通知させる
+・おやつが排出されたら、LINEでタッチされたことと残りのおやつ排出回数を通知させる
 
-※余裕があれば機能を追加する
+・残りのおやつ排出回数が０になればLINEで補充通知と補充＆マイコンでリセットボタンを押すまで停止
 
 # 使用モジュール
 |部品|個数|用途|接続ピン|
@@ -18,6 +18,7 @@
 |Arduino UNO R4 WiFi|1|通信・制御|USBケーブル|
 |タッチセンサ（TTP223B）|1|手動給餌トリガー|D2|
 |サーボモータ(9G Servo)|1|- フラップゲートの開閉制御|D9|
+|Breadboard Power Module with Battery|1|電源供給の安定化|ブレッドボード|
 
 # 使用ライブラリ（ソフトウェア）
 ・WiFiS3.h
@@ -37,7 +38,8 @@
 　→WiFi接続
 
 # 配線図
-  <img width="463" height="730" alt="image" src="https://github.com/user-attachments/assets/51c0345f-d02d-4cca-8499-4d4f401e82a4" />
+※Breadboard Power Module with Batteryを実機には取り付けている
+  <img width="869" height="760" alt="image" src="https://github.com/user-attachments/assets/db1d06ef-2cb0-4e73-b557-7a47ea7ae2fe" />
 
 # 回路図
 <img width="817" height="573" alt="image" src="https://github.com/user-attachments/assets/2ce914e1-487e-42d6-9dd5-871a02f01f54" />
@@ -76,13 +78,33 @@ graph TD
     失敗! --> WiFi再チェック
     WiFi再チェック --> 成功!
 
-    成功! --> SSLClient[SSL/TLS対応Wi-Fiクライアント作成]
-    SSLClient --> JSON作成[JSON本文作成]
+    成功! --> JSON作成[LINE APIに送るJSONデータをバッファに格納する処理]
     JSON作成 --> HTTP準備[HTTPリクエスト準備]
     HTTP準備 --> POST送信[POSTリクエスト]
     POST送信 --> JSON送信[JSON本文送信]
     JSON送信 --> レスポンス待ち
     レスポンス待ち --> ステータスコード[ステータスコード取得]
     ステータスコード --> セッション終了[セッション終了]
-    セッション終了 --> loop
+    セッション終了 --> 判定1[おやつが無くなっているか]
+
+　　判定1 --> true[条件成立]
+　　true -->  LINE通知呼び出し1[LINE通知関数を呼び出す]
+    LINE通知呼び出し1 --> WiFi再チェック1{WiFi接続再チェック}
+    WiFi再チェック1 --> 失敗!!
+    失敗!! --> WiFi再チェック1
+    WiFi再チェック1 --> 成功!!
+
+    成功!! --> JSON作成1[LINE APIに送るJSONデータをバッファに格納する処理]
+    JSON作成1 --> HTTP準備1[HTTPリクエスト準備]
+    HTTP準備1 --> POST送信1[POSTリクエスト]
+    POST送信1 --> JSON送信1[JSON本文送信]
+    JSON送信1 --> レスポンス待ち時間
+    レスポンス待ち時間 --> ステータスコード1[ステータスコード取得]
+    ステータスコード1 --> セッション終了1[セッション終了]
+    セッション終了1 --> 停止1[おやつ補充＆マイコンでリセットボタン押れるまで停止]
+    停止1 --> 初期化
+
+    判定1 --> false[条件不正立]
+    false --> 保存
+    保存 --> loop
 ```
