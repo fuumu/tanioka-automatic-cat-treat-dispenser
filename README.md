@@ -42,7 +42,7 @@
   ![配線図](picture/wiring%20diagram.png)
 
 # 回路図
-
+![回路図](picture/circuit%20diagram.png)
 
 # 動作仕様書
 
