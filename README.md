@@ -23,19 +23,19 @@
 # 使用ライブラリ（ソフトウェア）
 ・WiFiS3.h
 
-　→Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ
+　→Arduino UNO R4 WiFi向けのWi-Fi制御ライブラリ（追加ライブラリ）
 
 ・ArduinoHttpClient.h
 
-　→‣HTTP/HTTPSリクエストを簡単に送るためのライブラリ
+　→HTTP/HTTPS 通信を行うためのクライアントライブラリ（追加ライブラリ）
  
 ・Servo.h
 
- 　→Arduino標準ライブラリのひとつで、サーボモータを簡単に制御するためのヘッダファイル
+ 　→サーボモータを制御するためのライブラリ（標準ライブラリ）
   
 ・arduino_secrets.h
 
-　→WiFi接続
+　→WiFi SSIDやパスワードなど秘密情報を記述するためのヘッダーファイル
 
 # 配線図
 ※Breadboard Power Module with Batteryを実機には取り付けている
