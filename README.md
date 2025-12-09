@@ -65,7 +65,9 @@ graph TD
 
 # 自動おやつディスペンサーの仕様
 
+1.段ボールに埋め込まれたTouch Sensorをタッチ
 
+![タッチセンサー](picture/Touch%20Sensor.png)
 
 # 工夫点
 
