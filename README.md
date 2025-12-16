@@ -69,7 +69,7 @@
 # 回路図
 ![回路図](picture/circuit%20diagram.png)
 
-# 動作仕様書
+# フローチャート
 
 ```mermaid
 graph TD
@@ -149,7 +149,15 @@ Messaging APIとは
 LINE公式アカウントと外部サービスをつなぎ、双方向のコミュニケーションを可能にする仕組み
 
 毎月200通までなら無料でコミュニケーションが取れる
- 
+
+### Arduino IDE
+
+AArduino IDEとは
+
+Arduinoボード向けのプログラムを作成・編集・書き込みできる統合開発環境
+
+[Arduino IDE 公式サイト](https://www.arduino.cc/en/software/)
+
 # 参考サイト
 
 [基本プロジェクト：サーボ](https://docs.sunfounder.com/projects/elite-explorer-kit/ja/latest/basic_projects/27_basic_servo.html)
