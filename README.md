@@ -124,7 +124,7 @@ Messaging APIとは
 
 ### Arduino IDE
 
-AArduino IDEとは
+Arduino IDEとは
 - Arduinoボード向けのプログラムを作成・編集・書き込みできる統合開発環境
 
 公式サイト
